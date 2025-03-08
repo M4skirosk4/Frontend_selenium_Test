@@ -11,9 +11,17 @@ pipeline {
                 steps {
                     script {
                          echo 'Building the project...'
-                        sh 'mvn clean package -f pom.xml'
+                         sh 'mvn compile -f pom.xml'
                             }
-                        }
+                    }
                 }
+        stage('Run Test') {
+            steps {
+                 script {
+                    echo 'Building the project...'
+                    sh 'mvn test -Dbrowser=localchrome'
+                    }
+                 }
+            }
         }
 }
