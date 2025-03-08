@@ -30,10 +30,9 @@ pipeline {
                 steps {
                     script {
                         echo 'Running tests...'
-                        sh 'mvn clean test -e'
+                        sh 'mvn test -e'
                             }
                     }
                 }
         }
-
 }
