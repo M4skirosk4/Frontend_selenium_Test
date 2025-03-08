@@ -32,7 +32,7 @@ public class Test_Case_01 {
         MainPage mainpage = new MainPage(driver);
         waitForElementVisible(mainpage.getMicroservice1_button());
         mainpage.pressMicroservice1Button();
-        //try {Thread.sleep(2000); } catch (InterruptedException e) {e.printStackTrace();}
+        try {Thread.sleep(2000); } catch (InterruptedException e) {e.printStackTrace();}
         Assertions.assertEquals("¡Hola desde Microservicio 1!", mainpage.getMicroservice1TextField());
     }
     @Test
