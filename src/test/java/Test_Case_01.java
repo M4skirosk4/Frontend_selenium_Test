@@ -1,7 +1,4 @@
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -13,13 +10,14 @@ import pages.MainPage;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
+
 public class Test_Case_01 {
 
     WebDriver driver;
 
     @BeforeEach
     public void  beforeScenareo(){
-        System.setProperty("webdriver.chrome.driver", "C:/Users/erik.vila/IdeaProjects/frontend_seleniumTest/drivers/chromedriver.exe");
+        //System.setProperty("webdriver.chrome.driver", "C:/Users/erik.vila/IdeaProjects/frontend_seleniumTest/drivers/chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("http://localhost:8080/");
