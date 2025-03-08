@@ -5,6 +5,8 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'main', url: 'https://github.com/M4skirosk4/Frontend_selenium_Test.git'
+                echo 'Running tests...'
+                sh 'mvn test -e'
             }
         }
         stage('Build') {
