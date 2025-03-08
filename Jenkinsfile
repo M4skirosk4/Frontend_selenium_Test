@@ -4,10 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                dir('microservice1'){
                 git branch: 'main', url: 'https://github.com/M4skirosk4/Frontend_selenium_Test.git'
-
-                }
             }
         }
         stage('Build') {
