@@ -2,6 +2,11 @@ pipeline {
     agent any
 
     stages {
+    stage('Limpiar Workspace') {
+                steps {
+                    cleanWs()
+                }
+            }
         stage('Checkout') {
             steps {
                 dir('microservice1'){
@@ -31,7 +36,7 @@ pipeline {
                 steps {
                     script {
                         echo 'Running tests...'
-                        sh 'mvn test -e'
+                        sh 'mvn clean test -e'
                             }
                     }
                 }
