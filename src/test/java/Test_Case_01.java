@@ -1,3 +1,4 @@
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -6,6 +7,7 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.MainPage;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
@@ -18,6 +20,7 @@ public class Test_Case_01 {
     @BeforeEach
     public void  beforeScenareo(){
         //System.setProperty("webdriver.chrome.driver", "C:/Users/erik.vila/IdeaProjects/frontend_seleniumTest/drivers/chromedriver.exe");
+        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("http://localhost:8080/");
